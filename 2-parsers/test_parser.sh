@@ -9,10 +9,12 @@ elif which fromdos ; then
 else
     >&2 echo "warning: dos2unix is not installed."
     # This should work on Linux and MacOS, it matches all the carriage returns with sed and removes
-    # them.  Something similar could be implemented with `tr` if necessary or worst case it could be
-    # disabled by substituting it with `cat`.
-    DOS2UNIX="sed -e 's/\r//g'"
-    # DOS2UNIX="tr -d '\r'"
+    # them.  `tr` is used instead of `sed` because some versions of `sed` don't recognize the
+    # carriage return symbol.  Something similar could be implemented with `sed` if necessary or
+    # worst case it could be disabled by substituting it with `cat`.  One other thing to note is
+    # that there are no quotes around the \r, which is so that it gets converted by bash.
+    DOS2UNIX="tr -d \r"
+    # DOS2UNIX="sed -e s/\r//g"
     # DOS2UNIX="cat"
 fi
 
@@ -97,7 +99,7 @@ if [[ $? -ne 0 ]]; then
     echo "Warning: This appears not to be a Linux environment"
     echo "         Make sure you do a final run on a lab machine or an Ubuntu VM"
 else
-    grep -q "Ubuntu 16.04" <(echo $RELEASE)
+    grep -q "Ubuntu 20.04" <(echo $RELEASE)
     FOUND=$?
 
     if [[ $FOUND -ne 0 ]]; then

@@ -27,11 +27,11 @@ Feedback will be largely in terms of what works and what doesn't work. I hope to
 Environment
 ===========
 
-The target environment for the labs (and the coursework) is Ubuntu 16.04. It is strongly suggested that you do your final testing before each submission in this environment, otherwise you are likely to hit incompatibility problems, which may mean your program won't build. Those using Mac OS should watch out in particular, as the build environment is often subtly different.
+The target environment for the labs (and the coursework) is Ubuntu 20.04. It is strongly suggested that you do your final testing before each submission in this environment, otherwise you are likely to hit incompatibility problems, which may mean your program won't build. Those using Mac OS should watch out in particular, as the build environment is often subtly different.
 
 If you want to work on your own machine (which is encouraged), you can install a version of Ubuntu quite easily. For this, you may wish to use [VirtualBox](https://www.virtualbox.org/) together with [Vagrant](https://www.vagrantup.com/).
 
-This repository contains a [Vagrantfile](Vagrantfile), which is a script that sets up a blank Ubuntu 16.04 environment, and then installs all the tools that the lab exercises require. To start a virtual machine (VM) using Vagrant, follow these steps.
+This repository contains a [Vagrantfile](Vagrantfile), which is a script that sets up a blank Ubuntu 20.04 environment, and then installs all the tools that the lab exercises require. To start a virtual machine (VM) using Vagrant, follow these steps.
 
 - Open a shell in this directory.
 
