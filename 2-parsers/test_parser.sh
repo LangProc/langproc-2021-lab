@@ -7,20 +7,13 @@ if which dos2unix ; then
 elif which fromdos ; then
     DOS2UNIX="fromdos"
 else
-    # This works on a GNU version of sed. I think this
-    # will work in OSX as well, but don't have a machine
-    # on which to test that. From reading the OSX docs,
-    # it looks compatible.
-    # The code \x0D is the ASCII code of carriage-return,
-    # so it the regex should delete any CRs at the end of
-    # a line (or anywhere in a line)
-    DOS2UNIX="cat"
-    # Tested for combinations of:
-    # - Ubuntu
-    # - Cygwin
-    # and inputs formats:
-    # - LF
-    # - CRLF
+    >&2 echo "warning: dos2unix is not installed."
+    # This should work on Linux and MacOS, it matches all the carriage returns with sed and removes
+    # them.  Something similar could be implemented with `tr` if necessary or worst case it could be
+    # disabled by substituting it with `cat`.
+    DOS2UNIX="sed -e 's/\r//g'"
+    # DOS2UNIX="tr -d '\r'"
+    # DOS2UNIX="cat"
 fi
 
 echo "========================================"
