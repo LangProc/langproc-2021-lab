@@ -1,17 +1,15 @@
-Lab exercises for Compilers 2020/2021
+Lab exercises for Compilers 2021/2022
 ===============================================
 
 This repository contains the specifications for the three lab exercises for the Compilers module.
 
 The three exercises are:
 
-1 - [Lexers and regular expressions](1-regexes) (due Tue 9 Feb at 23:59).
+1 - [Lexers and regular expressions](1-regexes) (due Tue 8 Feb at 23:59).
 
-2 - [Parsers and ASTs](2-parsers) (due ~~Tue 23 Feb at 23:59~~ Thu 25 Feb at 23:59).
+2 - [Parsers and ASTs](2-parsers) (due Tue 22 Feb at 23:59).
 
-3 - [Code Generation](3-codegen) (due ~~Tue 9 Mar at 23:59~~ Thu 11 Mar at 23:59).
-
-(NB: the deadlines were extended by one week on 20-Jan-2021 to account for the mismatch between the lecture timetable and the lab timetable.)
+3 - [Code Generation](3-codegen) (due Thu 8 Mar at 23:59).
 
 The primary purpose of the lab exercises is to ensure that everyone learns the basic skills needed for the coursework. They are not designed to be too challenging, but they do require you to get to grips with several tools and concepts that you will need later.
 
@@ -61,7 +59,7 @@ Setting up your `git` repository
 
 A private repository has been created for you, which you can clone using the following command:
 ````
-git clone https://github.com/LangProc/langproc-2020-lab-${LOGIN}.git
+git clone https://github.com/LangProc/langproc-2021-lab-${LOGIN}.git
 ````
 You'll need to type in your GitHub credentials to authenticate, unless
 you've set up SSH authentication.
@@ -73,7 +71,7 @@ Synchronising with the specification repository
 
 If there are any changes to the specification (e.g. bugs or updates), you can incorporate them into your version by pulling again from the specification repo. First you need to make sure it is included as a "remote":
 ````
-git remote add spec https://github.com/LangProc/langproc-2020-lab.git
+git remote add spec https://github.com/LangProc/langproc-2021-lab.git
 ````
 If you now list the remotes, you should see both "origin" (your private repo), and "spec" (the specification repo):
 ````
