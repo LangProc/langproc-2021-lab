@@ -57,6 +57,11 @@ If you later run `vagrant up` again, it will not need to download the VM from sc
 Setting up your `git` repository
 ================================
 
+**NOTE:** As of this year, you will need to use a personal access token for cloning using HTTPS, or
+use an SSH key.  You can set up a token by following [these
+instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
+or an SSH key following [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+
 A private repository has been created for you, which you can clone using the following command:
 ````
 git clone https://github.com/LangProc/langproc-2021-lab-${LOGIN}.git
