@@ -68,9 +68,9 @@ Windows, which makes it much easier to work with than a VM.  It is then recommen
 2](https://docs.microsoft.com/en-us/windows/wsl/basic-commands#set-wsl-version-to-1-or-2) to get the
 most compatibility with the Linux environment used by Vagrant above.
 
-**NOTE:** When using WSL, there might be slight incompatibilities with the lab environment used for
-marking, so to be sure that everything works, it's always recommended to test the repository on a
-full version of Ubuntu 20.04 before submitting.
+> **NOTE:** When using WSL, there might be slight incompatibilities with the lab environment used
+> for marking, so to be sure that everything works, it's always recommended to test the repository
+> on a full version of Ubuntu 20.04 before submitting.
 
 To set up the lab environment, the following packages will be needed:
 
@@ -92,10 +92,11 @@ It should then be possible to follow along with the lab normally.
 Setting up your `git` repository
 ================================
 
-**NOTE:** As of this year, you will need to use a personal access token for cloning using HTTPS, or
-use an SSH key.  You can set up a token by following [these
-instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
-or an SSH key following [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+> **NOTE:** As of this year, you will need to use a personal access token for cloning using HTTPS,
+> or use an SSH key.  You can set up a token by following [these
+> instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
+> or an SSH key following [these
+> instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 A private repository has been created for you, which you can clone using the following command:
 ````
