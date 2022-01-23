@@ -70,7 +70,7 @@ most compatibility with the Linux environment used by Vagrant above.
 
 > **NOTE:** When using WSL, there might be slight incompatibilities with the lab environment used
 > for marking, so to be sure that everything works, it's always recommended to test the repository
-> on a full version of Ubuntu 20.04 before submitting.
+> on a full version of Ubuntu 20.04 using Vagrant before submitting.
 
 To set up the lab environment, the following packages will be needed:
 
