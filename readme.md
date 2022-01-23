@@ -29,7 +29,14 @@ Environment
 
 The target environment for the labs (and the coursework) is Ubuntu 20.04. It is strongly suggested that you do your final testing before each submission in this environment, otherwise you are likely to hit incompatibility problems, which may mean your program won't build. Those using Mac OS should watch out in particular, as the build environment is often subtly different.
 
-If you want to work on your own machine (which is encouraged), you can install a version of Ubuntu quite easily. For this, you may wish to use [VirtualBox](https://www.virtualbox.org/) together with [Vagrant](https://www.vagrantup.com/).
+If you want to work on your own machine (which is encouraged), you can install a version of Ubuntu
+quite easily. For this, you may wish to use [VirtualBox](https://www.virtualbox.org/) together with
+[Vagrant](https://www.vagrantup.com/).  Another option for Windows users is to use the [Windows
+Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), preferably WSL 2
+for the most compatibility.
+
+Vagrant
+-------
 
 This repository contains a [Vagrantfile](Vagrantfile), which is a script that sets up a blank Ubuntu 20.04 environment, and then installs all the tools that the lab exercises require. To start a virtual machine (VM) using Vagrant, follow these steps.
 
@@ -52,6 +59,34 @@ If you want to stop the machine,
 - Run `vagrant halt` to shut down the virtual machine.
 
 If you later run `vagrant up` again, it will not need to download the VM from scratch.
+
+Windows using WSL
+-----------------
+
+[WSL](https://docs.microsoft.com/en-us/windows/wsl/install) is a builtin linux environment in
+Windows, which makes it much easier to work with than a VM.  It is then recommended to use [WSL
+2](https://docs.microsoft.com/en-us/windows/wsl/basic-commands#set-wsl-version-to-1-or-2) to get the
+most compatibility with the Linux environment used by Vagrant above.
+
+**NOTE:** When using WSL, there might be slight incompatibilities with the lab environment used for
+marking, so to be sure that everything works, it's always recommended to test the repository on a
+full version of Ubuntu 20.04 before submitting.
+
+To set up the lab environment, the following packages will be needed:
+
+```shell
+sudo apt-get update
+# Standard build tools
+sudo apt-get -y install g++ gdb make dos2unix git
+# Compiler build tools
+sudo apt-get -y install bison flex
+# MIPS cross-compiler stuff
+sudo apt-get -y install g++-mips-linux-gnu gdb-multiarch
+# QEMU run-time emulator
+sudo apt-get -y install qemu
+```
+
+It should then be possible to follow along with the lab normally.
 
 
 Setting up your `git` repository
