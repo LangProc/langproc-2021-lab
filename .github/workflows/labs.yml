@@ -1,0 +1,30 @@
+name: Labs
+on: [push]
+jobs:
+  run-all:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          sudo apt-get update
+          sudo apt-get -y install g++ gdb make dos2unix git
+          sudo apt-get -y install bison flex
+          sudo apt-get -y install g++-mips-linux-gnu gdb-multiarch
+          sudo apt-get -y install qemu
+      - run: find . -path ./.git -prune -o -type f -exec dos2unix {} \;
+      - run: bash test_lexer.sh 2>&1 | tee test_lexer.log
+        working-directory: ./1-regexes
+      - run: bash test_parser.sh 2>&1 | tee test_parser.log
+        working-directory: ./2-parsers
+      - run: bash test_interpreter.sh 2>&1 | tee test_interpreter.log
+        working-directory: ./3-codegen
+      - run: bash test_compiler.sh 2>&1 | tee test_compiler.log
+        working-directory: ./3-codegen
+      - uses: actions/upload-artifact@v2
+        with:
+          name: result-logs
+          path: |
+            ./**/*.log
+            ./1-regexes/test/out/*.txt
+            ./2-parsers/test/valid_expressions.got.txt
+            ./3-codegen/working/**/*.txt
