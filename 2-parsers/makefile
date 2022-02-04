@@ -23,3 +23,5 @@ clean :
 	rm bin/*
 	rm src/*.tab.cpp
 	rm src/*.yy.cpp
+	rm src/maths_parser.output
+	rm src/maths_parser.tab.hpp
